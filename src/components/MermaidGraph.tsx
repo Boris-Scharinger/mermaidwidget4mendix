@@ -1,5 +1,5 @@
 import { Component, ReactNode, createElement } from "react";
-//import classNames from "classnames";
+import classNames from "classnames";
 
 import mermaid from "mermaid";
 
@@ -9,8 +9,9 @@ export interface MermaidGraphProps {
     className?: string;
     style?: object;
     bootstrapStyle?: BootstrapStyle;
-    // clickable?: boolean;
-    // onClickAction?: () => void;
+    showSVGSaveButton: boolean;
+    clickable?: boolean;
+    onClickAction?: () => void;
     getRef?: (node: HTMLElement) => void;
 }
 interface State { };
@@ -44,7 +45,7 @@ export class MermaidGraph extends Component<MermaidGraphProps, State> {
         downloadLink.href = svgUrl;
         downloadLink.download = "graph.svg";
         document.body.appendChild(downloadLink);
-        downloadLink.click();
+        downloadLink.click(); 
         document.body.removeChild(downloadLink);
     };
 
@@ -52,15 +53,16 @@ export class MermaidGraph extends Component<MermaidGraphProps, State> {
     render(): ReactNode {
         return (
             <div>
-                <div id='svg_container'></div>
-                {/* <span
-                    className={classNames("widget-mermaidwidget", this.props.className, { [`label-${this.props.bootstrapStyle}`]: !!this.props.bootstrapStyle })}
-                    // onClick={this.props.onClickAction}
+                <div id='svg_container' className={classNames("widget-mermaidwidget", this.props.className, { [`label-${this.props.bootstrapStyle}`]: !!this.props.bootstrapStyle })}
+                    onClick={this.props.onClickAction}
                     ref={this.props.getRef}
                     style={this.props.style}>
-                    <div className="mermaid">{this.props.value || this.props.defaultValue}</div>
-                </span> */}
-                <button onClick={this.saveSvg}>Save as SVG</button>
+                </div>
+                { this.props.showSVGSaveButton &&
+                    <div>
+                    <button type='button' className={classNames("btn mx-button", this.props.className, { [`label-${this.props.bootstrapStyle}`]: !!this.props.bootstrapStyle })} style={this.props.style} onClick={this.saveSvg}>Save as SVG</button>
+                    </div>
+                }
             </div>
         );
     }

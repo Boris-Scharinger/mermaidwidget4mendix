@@ -24,10 +24,11 @@ export class preview extends Component<MermaidWidgetPreviewProps> {
         return {
             bootstrapStyle: props.bootstrapStyle,
             className: props.class,
-            // clickable: false,
-            // style: props.styleObject,
+            clickable: false,
+            //style: props.styleObject,
             defaultValue: props.DefaultValue ? props.DefaultValue : "",
-            value: props.valueAttribute
+            value: props.valueAttribute,
+            showSVGSaveButton: props.showSVGSaveButton
         };
     }
 }

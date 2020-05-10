@@ -21,6 +21,10 @@
                 <caption>Default Graph Definition</caption>
                 <description>The mermaid graph definition when no value is provided via the attribute</description>
             </property>
+            <property key="showSVGSaveButton" type="boolean" defaultValue="false">
+                <caption>Show SVG Save Button</caption>
+                <description>Allows users to save the displayed graph as a SVG file</description>
+            </property>
         </propertyGroup>
         <propertyGroup caption="Display">
             <property key="bootstrapStyle" type="enumeration" defaultValue="default">
@@ -38,11 +42,11 @@
             </property>
         </propertyGroup>
 
-        <!-- <propertyGroup caption="Events">
+        <propertyGroup caption="Events">
             <property key="onClickAction" type="action" required="false">
                 <caption>On click action</caption>
                 <description>Action to trigger when mermaid graph is clicked</description>
             </property>
-        </propertyGroup> -->
+        </propertyGroup>
     </properties>
 </widget>
