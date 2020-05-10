@@ -19,8 +19,7 @@ export class MermaidWidget extends Component<MermaidWidgetContainerProps> {
                 value={this.props.valueAttribute ? this.props.valueAttribute.displayValue : ""}
 
                 // onClickAction={this.onClickHandler}
-                style={this.props.style}
-            ></MermaidGraph>
+                style={this.props.style} />
         );
     }
 
