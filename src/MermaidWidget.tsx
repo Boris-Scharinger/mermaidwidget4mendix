@@ -9,7 +9,7 @@ export class MermaidWidget extends Component<MermaidWidgetContainerProps> {
     private readonly onClickHandler = this.onClick.bind(this);
 
     render(): ReactNode {
-
+        console.log('container widget says hi');
         return (
             <MermaidGraph
                 bootstrapStyle={this.props.bootstrapStyle}
@@ -18,6 +18,7 @@ export class MermaidWidget extends Component<MermaidWidgetContainerProps> {
                 defaultValue={this.props.DefaultValue ? this.props.DefaultValue : ""}
                 value={this.props.valueAttribute ? this.props.valueAttribute.displayValue : ""}
                 showSVGSaveButton={this.props.showSVGSaveButton}
+                buttonLabelText={this.props.buttonLabelText ? this.props.buttonLabelText.value : ""}
                 onClickAction={this.onClickHandler}
                 style={this.props.style} />
         );

@@ -28,7 +28,8 @@ export class preview extends Component<MermaidWidgetPreviewProps> {
             //style: props.styleObject,
             defaultValue: props.DefaultValue ? props.DefaultValue : "",
             value: props.valueAttribute,
-            showSVGSaveButton: props.showSVGSaveButton
+            showSVGSaveButton: props.showSVGSaveButton,
+            buttonLabelText: props.buttonLabelText
         };
     }
 }

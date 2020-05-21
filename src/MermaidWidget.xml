@@ -25,6 +25,15 @@
                 <caption>Show SVG Save Button</caption>
                 <description>Allows users to save the displayed graph as a SVG file</description>
             </property>
+            <property key="buttonLabelText" type="textTemplate">
+                <caption>Show Save Button Label</caption>
+                <description/>
+                    <translations>
+                        <translation lang="en_US">Save as SVG</translation>
+                        <translation lang="de_DE">Als SVG speichern</translation>
+                    </translations>
+            </property>
+            
         </propertyGroup>
         <propertyGroup caption="Display">
             <property key="bootstrapStyle" type="enumeration" defaultValue="default">
