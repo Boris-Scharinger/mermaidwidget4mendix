@@ -2,6 +2,7 @@ import { Component, ReactNode, createElement } from "react";
 import classNames from "classnames";
 
 import mermaid from "mermaid";
+import { Alert } from "./Alert";
 
 export interface MermaidGraphProps {
     defaultValue?: string;
@@ -14,27 +15,55 @@ export interface MermaidGraphProps {
     onClickAction?: () => void;
     getRef?: (node: HTMLElement) => void;
 }
-interface State { };
-//test
+interface State {
+    error: string;
+};
 
 export type BootstrapStyle = "default" | "info" | "inverse" | "primary" | "danger" | "success" | "warning";
 
 export class MermaidGraph extends Component<MermaidGraphProps, State> {
+
+    state = {
+        error: null
+    };
+
     componentDidMount() {
         mermaid.initialize({
-            startOnLoad: true, securityLevel: 'loose'
+            startOnLoad: false, securityLevel: 'loose'
         });
-        mermaid.contentLoaded();
+
+        this.renderSvg();
     }
 
-    componentDidUpdate() {
-        mermaid.render('svg_content', this.props.value || this.props.defaultValue || '', this.svgCreated);
+    componentDidUpdate(prevProps: MermaidGraphProps, prevState: State) {
+        if (prevProps.value != this.props.value || prevProps.defaultValue != this.props.defaultValue) {
+            this.renderSvg();
+        }
     }
 
     svgCreated = (svgGraph: any) => {
         const container = document.getElementById('svg_container');
         if (container) {
             container.innerHTML = svgGraph;
+        }
+    };
+
+    shouldComponentUpdate(nextProps: MermaidGraphProps, nextState: State) {
+        return nextProps.value != this.props.value
+            || nextProps.defaultValue != this.props.defaultValue
+            || nextState.error != this.state.error;
+    }
+
+    renderSvg = () => {
+        try {
+            const graphDefinitiion = this.props.value || this.props.defaultValue || '';
+            mermaid.parse(graphDefinitiion);
+            mermaid.render('svg_content', graphDefinitiion, this.svgCreated);
+            this.setState({ error: null });
+        } catch (err) {
+            const errorString = err.str ?? JSON.stringify(err);
+            console.warn(errorString);
+            this.setState({ error: errorString });
         }
     };
 
@@ -46,7 +75,7 @@ export class MermaidGraph extends Component<MermaidGraphProps, State> {
         downloadLink.href = svgUrl;
         downloadLink.download = "graph.svg";
         document.body.appendChild(downloadLink);
-        downloadLink.click(); 
+        downloadLink.click();
         document.body.removeChild(downloadLink);
     };
 
@@ -54,14 +83,15 @@ export class MermaidGraph extends Component<MermaidGraphProps, State> {
     render(): ReactNode {
         return (
             <div>
+                {this.state.error && <Alert bootstrapStyle="warning" message={this.state.error} />}
                 <div id='svg_container' className={classNames("widget-mermaidwidget", this.props.className, { [`label-${this.props.bootstrapStyle}`]: !!this.props.bootstrapStyle })}
                     onClick={this.props.onClickAction}
                     ref={this.props.getRef}
                     style={this.props.style}>
                 </div>
-                { this.props.showSVGSaveButton &&
+                {this.props.showSVGSaveButton &&
                     <div>
-                    <button type='button' className={classNames("btn mx-button", this.props.className, { [`label-${this.props.bootstrapStyle}`]: !!this.props.bootstrapStyle })} style={this.props.style} onClick={this.saveSvg}>Save as SVG</button>
+                        <button type='button' className={classNames("btn mx-button", this.props.className, { [`label-${this.props.bootstrapStyle}`]: !!this.props.bootstrapStyle })} style={this.props.style} onClick={this.saveSvg}>Save as SVG</button>
                     </div>
                 }
             </div>
