@@ -19,7 +19,7 @@
             </property>
             <property key="DefaultValue" type="string" multiline="true" required="false">
                 <caption>Default Graph Definition</caption>
-                <description>The mermaid graph definition when no value is provided via the attribute</description>
+                <description>The mermaid graph definition when no value is provided via the attribute.</description>
             </property>
             <property key="showSVGSaveButton" type="boolean" defaultValue="false">
                 <caption>Show SVG Save Button</caption>

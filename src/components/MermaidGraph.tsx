@@ -12,6 +12,7 @@ export interface MermaidGraphProps {
     bootstrapStyle?: BootstrapStyle;
     showSVGSaveButton: boolean;
     clickable?: boolean;
+    buttonLabelText: string;
     onClickAction?: () => void;
     getRef?: (node: HTMLElement) => void;
 }
