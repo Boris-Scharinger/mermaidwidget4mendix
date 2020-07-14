@@ -1,7 +1,7 @@
 {
   "name": "mermaid-widget",
   "widgetName": "MermaidWidget",
-  "version": "1.0.0",
+  "version": "1.0.0-beta",
   "description": "Renders mermaid graph markup code",
   "copyright": "2020 Siemens",
   "author": "Boris Scharinger",
