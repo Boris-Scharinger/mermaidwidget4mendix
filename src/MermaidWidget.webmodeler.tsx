@@ -8,7 +8,7 @@ export class preview extends Component<MermaidWidgetPreviewProps> {
     render(): ReactNode {
         return (
             <div ref={this.parentInline}>
-                <MermaidGraph {...this.transformProps(this.props)}></MermaidGraph>
+                here will be a graph!
             </div>
         );
     }
@@ -18,19 +18,6 @@ export class preview extends Component<MermaidWidgetPreviewProps> {
         if (node && node.parentElement && node.parentElement.parentElement) {
             node.parentElement.parentElement.style.display = "inline-block";
         }
-    }
-
-    private transformProps(props: MermaidWidgetPreviewProps): MermaidGraphProps {
-        return {
-            bootstrapStyle: props.bootstrapStyle,
-            className: props.class,
-            clickable: false,
-            //style: props.styleObject,
-            defaultValue: props.DefaultValue ? props.DefaultValue : "",
-            value: props.valueAttribute,
-            showSVGSaveButton: props.showSVGSaveButton,
-            buttonLabelText: props.buttonLabelText
-        };
     }
 }
 

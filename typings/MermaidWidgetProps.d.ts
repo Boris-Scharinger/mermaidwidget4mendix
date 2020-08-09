@@ -4,7 +4,7 @@
  * @author Mendix UI Content Team
  */
 import { CSSProperties } from "react";
-import { ActionValue, EditableValue } from "mendix";
+import { ActionValue, DynamicValue, EditableValue } from "mendix";
 
 export type BootstrapStyleEnum = "default" | "primary" | "success" | "info" | "inverse" | "warning" | "danger";
 
@@ -14,8 +14,9 @@ export interface MermaidWidgetContainerProps {
     style?: CSSProperties;
     tabIndex: number;
     valueAttribute?: EditableValue<string>;
-    DefaultValue?: string;
-    showSVGSaveButton: boolean;
+    themeCSS?: string;
+    showSVGdownloadButton: boolean;
+    downloadButtonLabelText: DynamicValue<string>;
     bootstrapStyle: BootstrapStyleEnum;
     onClickAction?: ActionValue;
 }
@@ -24,8 +25,9 @@ export interface MermaidWidgetPreviewProps {
     class: string;
     style: string;
     valueAttribute: string;
-    DefaultValue: string;
-    showSVGSaveButton: boolean;
+    themeCSS: string;
+    showSVGdownloadButton: boolean;
+    downloadButtonLabelText: string;
     bootstrapStyle: BootstrapStyleEnum;
     onClickAction: {} | null;
 }

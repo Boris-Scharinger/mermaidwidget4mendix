@@ -1,7 +1,7 @@
 {
   "name": "mermaid-widget",
   "widgetName": "MermaidWidget",
-  "version": "1.0.0",
+  "version": "1.0.0-beta",
   "description": "Renders mermaid graph markup code",
   "copyright": "2020 Siemens",
   "author": "Boris Scharinger",
@@ -27,15 +27,15 @@
     "@types/big.js": "^4.0.5",
     "@types/classnames": "^2.2.4",
     "@types/jest": "^24.0.0",
-    "@types/react": "^16.8.17",
-    "@types/react-dom": "^16.8.4",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
     "@types/react-test-renderer": "^16.8.1"
   },
   "dependencies": {
     "@hot-loader/react-dom": "^16.8.6",
     "@types/mermaid": "^8.2.1",
+    "mermaid": "8.5.1",
     "big.js": "^5.2.2",
-    "classnames": "^2.2.6",
-    "mermaid": "^8.5.0"
+    "classnames": "^2.2.6"
   }
 }

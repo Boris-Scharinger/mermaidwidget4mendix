@@ -22,3 +22,7 @@
     min-width: 18px;
     min-height: 18px;
 }
+
+div.mermaid {
+    font-family: 'Titillium Web', verdana, arial;
+}
