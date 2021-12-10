@@ -34,7 +34,7 @@
   "dependencies": {
     "@hot-loader/react-dom": "^16.8.6",
     "@types/mermaid": "^8.2.1",
-    "mermaid": "8.5.1",
+    "mermaid": "8.11.0",
     "big.js": "^5.2.2",
     "classnames": "^2.2.6"
   }
