@@ -1,9 +1,9 @@
 {
-  "compilerOptions": {
-    "jsx": "react",
-    "strict": false,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false
-  },
+    "compilerOptions": {
+      "jsx": "react",
+      "strict": false,
+      "noUnusedLocals": false,
+      "noUnusedParameters": false
+    },
   "extends": "./node_modules/@mendix/pluggable-widgets-tools/configs/tsconfig.base.json"
 }

@@ -1,41 +1,39 @@
 {
-  "name": "mermaid-widget",
-  "widgetName": "MermaidWidget",
-  "version": "1.0.0-beta",
-  "description": "Renders mermaid graph markup code",
-  "copyright": "2020 Siemens",
+  "name": "mermaidformendix",
+  "widgetName": "MermaidForMendix",
+  "version": "1.0.5",
+  "description": "Renders Mermaid Graph Code as an SVG on a Mendix Page",
+  "copyright": "2022 Siemens AG",
   "author": "Boris Scharinger",
+  "engines": {
+    "node": ">=12"
+  },
   "config": {
-    "widgetPath": "../..//widgets",
-    "projectPath": "../..//",
+    "projectPath": ".//",
     "mendixHost": "http://localhost:8080",
     "developmentPort": "3000"
   },
   "packagePath": "siemens",
   "scripts": {
-    "start": "concurrently \"pluggable-widgets-tools start:server --open\" \"npm:dev\"",
-    "dev": "pluggable-widgets-tools start:ts",
-    "build": "pluggable-widgets-tools build:ts",
+    "start": "pluggable-widgets-tools start:web --open",
+    "dev": "pluggable-widgets-tools start:web",
+    "build": "pluggable-widgets-tools build:web",
     "lint": "pluggable-widgets-tools lint",
     "lint:fix": "pluggable-widgets-tools lint:fix",
     "prerelease": "npm run lint",
-    "release": "pluggable-widgets-tools release:ts"
+    "release": "pluggable-widgets-tools release:web"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "devDependencies": {
-    "@mendix/pluggable-widgets-tools": "^8.7.0",
+    "@mendix/pluggable-widgets-tools": "^8.14.0",
     "@types/big.js": "^4.0.5",
     "@types/classnames": "^2.2.4",
-    "@types/jest": "^24.0.0",
-    "@types/react": "^16.9.35",
-    "@types/react-dom": "^16.9.8",
-    "@types/react-test-renderer": "^16.8.1"
+    "@types/react": "~16.9.0",
+    "@types/react-dom": "~16.9.0"
   },
   "dependencies": {
-    "@hot-loader/react-dom": "^16.8.6",
-    "@types/mermaid": "^8.2.1",
-    "mermaid": "8.13.8",
-    "big.js": "^5.2.2",
-    "classnames": "^2.2.6"
+    "@types/mermaid": "^8.2.8",
+    "classnames": "^2.2.6",
+    "mermaid": "^8.13.8"
   }
 }

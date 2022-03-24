@@ -1,55 +1,41 @@
-## MermaidWidget
-Renders mermaid graph markup code using the great <a href="https://mermaid-js.github.io/mermaid/#/README">mermaid library (v8.5)</a> for
-<ul>
-<li>Flow diagrams (top down and left to right)</li>
-<li>Sequence diagrams</li>
-<li>Gantt charts</li>
-<li>Class digrams</li>
-<li>Entity relationship diagrams</li>
-<li>Github diagrams (experimental)</li>
-</ul>
+## MermaidForMendix
+Renders mermaid graph markup code using the great mermaid library (v8.14) for
+- Flow diagrams (top down and left to right)
+- Sequence diagrams
+- Gantt charts
+- Class digrams
+- Entity relationship diagrams
+- Github diagrams (experimental)
 
 ## Features
-<ul>
-<li>uses any Mendix entity string attribute for the Graph Definition</li>
-<li>displays a rendering error 'alert style'</li>
-<li>provides optional button to save the resulting SVG locally</li>
-<li>can have an onClick action</li>
-</ul>  
+- uses any Mendix entity string attribute for the Graph Definition
+- displays a rendering error 'alert style'
+- provides optional button to save the resulting SVG locally
+- can have an onClick action
 
 ## Usage
-<ol>
-<li>Create or use an entity with a string attribute (long enough to carry the graph definition)</li>
-<li>Fill it somehow. Extensive documentation about the graph definition language on the <a href="https://mermaid-js.github.io/mermaid/#/">mermaid project's pages</a>.</li>
-<li>Place the mermaid widget on a page and configure it to use the string attribute</li>
-<li>Further Settings:</li>
-<ol>
-    <li><b>Mermaid CSS properties:</b> Allows to provide mermaid with a couple of Cascading styles that influence color, paddings etc. of the graph itself. (Not super easy to use - however a mermaid implementation topic.)</li>
-    <li>Option to display a <b>SVG download button</b> and respective settings for button caption and button style</li>
-    <li><b>OnClick action:</b>Option to select what happens if someone clicks on the Graph</li>
-    </ol>
-</ol>
+1. Create or use an entity with a string attribute (long enough to carry the graph definition)
+2. Fill it somehow. Extensive documentation about the graph definition language on the mermaid project's pages.
+3. Place the mermaid widget on a page and configure it to use the string attribute
+4. Further Settings:
+4.1 Mermaid CSS properties: Allows to provide mermaid with a couple of Cascading styles that influence color, paddings etc. of the graph itself. (Not super easy to use - however a mermaid implementation topic.)
+4.2 Option to display a SVG download button and respective settings for button caption and button style
+4.3 OnClick action:Option to select what happens if someone clicks on the Graph
 
 ## Current Limitations
-<ol>
-    <li>Would love to be able to pass the resulting SVG into a system.image but failed to far to get that sorted.</li>
-    <li>Styling the graph is tricky. I would love to find an easy way to impose bootstrap styles properly.</li>
-    <li>OnCLick Action does not pass any information about where the user has clicked.</li>
-</ol>
+1. Would love to be able to pass the resulting SVG into a system.image but failed to far to get that sorted.
+2. Styling the graph is tricky. I would love to find an easy way to impose bootstrap styles properly.
+3. OnCLick Action does not pass any information about where the user has clicked.
 
 ## Dependencies
-<ol>
-    <li>Uses Pluggable Widget technology, so I guess that's >Mendix 8.4</li>
-    <li>Mermaid Library 8.5 (npm). License: MIT</li>
-</ol>
+- Uses Pluggable Widget technology, so I guess that's >Mendix 8.4
+- Mermaid Library 8.14. License: MIT
 
 ## Demo project
-A small demo project can be found here: <a href="https://mermaid100-sandbox.mxapps.io/index.html?profile=Responsive">https://mermaid100-sandbox.mxapps.io/</a>
+A small demo project can be found here: https://mermaid100-sandbox.mxapps.io/
 
 ## Issues, suggestions and feature requests
-Link to <a href="https://github.com/Boris-Scharinger/mermaidwidget4mendix/issues">GitHub issues</a>.
+[link to GitHub issues]
 
 ## Development and contribution
-Thanks to Andrei Buntsev for helping me to integrate this in Mendix
-Thanks and kudos to  Knut Sveidqvist for inventing mermaid and to all of the <a href="https://github.com/mermaid-js/mermaid/graphs/contributors">mermaid contributors</a>.
-
+Thanks to Andrei Buntsev for helping me to integrate this in Mendix Thanks and kudos to Knut Sveidqvist for inventing mermaid and to all of the mermaid contributors.
